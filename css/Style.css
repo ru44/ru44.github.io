@@ -1,0 +1,109 @@
+html,a:hover {
+  background: url("https://i.imgur.com/6OfGEce.png") #000 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Iceland;
+  font-size: 24px;
+  overflow: hidden;
+  text-align: center;
+  cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
+}
+
+img {
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+}
+
+img:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+@keyframes rotate {
+  10% {
+    transform: rotateY(36deg);
+  }
+
+  20% {
+    transform: rotateY(72deg);
+  }
+
+  30% {
+    transform: rotateY(108deg);
+  }
+
+  40% {
+    transform: rotateY(144deg);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    transform: rotateY(216deg);
+  }
+
+  70% {
+    transform: rotateY(252deg);
+  }
+
+  80% {
+    transform: rotateY(288deg);
+  }
+
+  90% {
+    transform: rotateY(324deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e,
+    0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736,
+    0 0 75px #2d4140;
+  animation-name: blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.glow {
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
+      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+  }
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
+      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9be2e2, 0 0 40px #9be2e2,
+      0 0 50px #9be2e2, 0 0 60px #9be2e2, 0 0 70px #9be2e2, 0 0 80px #9be2e2;
+  }
+}
