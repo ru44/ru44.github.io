@@ -1,1 +1,1 @@
-# all my projects I will connect them with this website
+# all my projects I will connect it with this website
