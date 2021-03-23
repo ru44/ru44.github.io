@@ -1,0 +1,289 @@
+@keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0;
+    }
+
+    100% {
+        opacity: 0.2;
+        top: 100%;
+    }
+}
+
+@keyframes blow-soft-left {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -50%;
+    }
+}
+
+@keyframes blow-medium-left {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -100%;
+    }
+}
+
+@keyframes blow-soft-right {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: 50%;
+    }
+}
+
+@keyframes blow-medium-right {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes sway-0 {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    40% {
+        transform: rotate(28deg);
+    }
+
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes sway-1 {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(43deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes sway-2 {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(56deg);
+    }
+
+    100% {
+        transform: rotate(22deg);
+    }
+}
+
+@keyframes sway-3 {
+    0% {
+        transform: rotate(25deg);
+    }
+
+    40% {
+        transform: rotate(74deg);
+    }
+
+    100% {
+        transform: rotate(37deg);
+    }
+}
+
+@keyframes sway-4 {
+    0% {
+        transform: rotate(40deg);
+    }
+
+    40% {
+        transform: rotate(68deg);
+    }
+
+    100% {
+        transform: rotate(25deg);
+    }
+}
+
+@keyframes sway-5 {
+    0% {
+        transform: rotate(50deg);
+    }
+
+    40% {
+        transform: rotate(78deg);
+    }
+
+    100% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes sway-6 {
+    0% {
+        transform: rotate(65deg);
+    }
+
+    40% {
+        transform: rotate(92deg);
+    }
+
+    100% {
+        transform: rotate(58deg);
+    }
+}
+
+@keyframes sway-7 {
+    0% {
+        transform: rotate(72deg);
+    }
+
+    40% {
+        transform: rotate(118deg);
+    }
+
+    100% {
+        transform: rotate(68deg);
+    }
+}
+
+@keyframes sway-8 {
+    0% {
+        transform: rotate(94deg);
+    }
+
+    40% {
+        transform: rotate(136deg);
+    }
+
+    100% {
+        transform: rotate(82deg);
+    }
+}
+
+.sakura {
+    background: linear-gradient(120deg, rgba(183, 255, 255, 0.9), rgba(155, 226, 226, 0.9));
+    border-radius: 12px 1px;
+    pointer-events: none;
+    position: absolute;
+}
+
+.glow {
+    
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2D7677, 0 0 40px #2D7677, 0 0 50px #2D7677, 0 0 60px #2D7677, 0 0 70px #2D7677;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #9BE2E2, 0 0 40px #9BE2E2, 0 0 50px #9BE2E2, 0 0 60px #9BE2E2, 0 0 70px #9BE2E2, 0 0 80px #9BE2E2;
+    }
+}
+
+html {
+    background: url('https://i.imgur.com/6OfGEce.png') #000 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Iceland;
+    font-size: 42px;
+    overflow: hidden;
+    text-align: center;
+}
+
+img {
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+@keyframes rotate {
+    10% {
+        transform: rotateY(36deg);
+    }
+
+    20% {
+        transform: rotateY(72deg);
+    }
+
+    30% {
+        transform: rotateY(108deg);
+    }
+
+    40% {
+        transform: rotateY(144deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    60% {
+        transform: rotateY(216deg);
+    }
+
+    70% {
+        transform: rotateY(252deg);
+    }
+
+    80% {
+        transform: rotateY(288deg);
+    }
+
+    90% {
+        transform: rotateY(324deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    text-shadow: 0 0 5px #2C7DCD, 0 0 10px #298A9B, 0 0 15px #585E5E, 0 0 20px #4A4D4D, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736, 0 0 75px #2D4140;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+body,
+a:hover {
+    cursor: url(http://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
+}
