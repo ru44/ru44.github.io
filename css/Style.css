@@ -184,7 +184,6 @@
 }
 
 .glow {
-    
     color: #fff;
     text-align: center;
     animation: glow 1s ease-in-out infinite alternate;
@@ -205,7 +204,7 @@ html {
     background-size: cover;
     background-attachment: fixed;
     font-family: Iceland;
-    font-size: 42px;
+    font-size: 24px;
     overflow: hidden;
     text-align: center;
 }
@@ -275,7 +274,7 @@ footer {
     background-color: transparent;
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 24px;
     text-shadow: 0 0 5px #2C7DCD, 0 0 10px #298A9B, 0 0 15px #585E5E, 0 0 20px #4A4D4D, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736, 0 0 75px #2D4140;
     animation-name: blinker;
     animation-duration: 1s;
