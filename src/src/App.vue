@@ -3,7 +3,10 @@
     <Camera :position="{ z: 10 }" />
     <Scene>
       <PointLight :position="{ y: 50, z: 50 }" />
-        <GltfModel ref="model" src="../models/scene.gltf" @load="onReady" />
+        <!-- <GltfModel ref="model" src="../models/scene.gltf" @load="onReady" /> -->
+      <Box>
+        <BasicMaterial color="#ffffff" />
+      </Box>
     </Scene>
   </Renderer>
 </template>
