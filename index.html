@@ -53,8 +53,8 @@
       </span>
       <span>.::<strong style="color: white; text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e, 0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736, 0 0 75px #2d4140">Welcome To my website all My Projects You will find it here</strong>::.</span>
     </div>
-    <audio controls autoplay hidden>
-      <source src="https://audio.jukehost.co.uk/Qe8NEXE7OTak5bS1dpTSYuIo0OC8JUTQ" type="audio/mpeg" />
+    <audio id="sound">
+      <source src="https://audio.jukehost.co.uk/Qe8NEXE7OTak5bS1dpTSYuIo0OC8JUTQ" />
     </audio>
     <footer>
       <h4>Greets To: <marquee style="font-size: 20px" scrollamount="10" scorlldelay="40" width="50%">› -=| dR.N2NO | Mr.J0o | Sa3san | Ch@nk3R | DexTer | λɱϓ | o̷s̷a̷m̷a̷ | ᴸᴵᵛᴵᵁ ᶠᴼᴼᵀᴮᴬᴸᴸ|=- ‹</marquee></h4>
@@ -62,7 +62,6 @@
     <script>
       var pressed = {},
         audio = document.getElementById("sound"),
-        output = document.getElementById("output"),
         maxValue = 2,
         duration,
         volume;
@@ -75,8 +74,7 @@
       document.onkeyup = function (e) {
         if (!pressed[e.which]) return;
 
-        // 86 = V
-        if (e.keyCode === 86) {
+        if (e.keyCode === 32) {
           // Calculate press time
           duration = (e.timeStamp - pressed[e.which]) / 1000;
 
@@ -92,9 +90,6 @@
           audio.play();
 
           pressed[e.which] = 0;
-
-          // Log press duration and resulting volume
-          output.innerHTML += "<p>Key " + e.which + " was pressed for " + duration + " seconds. Volume is set to " + (volume * 100).toFixed(2) + "%</p>";
 
           return false;
         }
