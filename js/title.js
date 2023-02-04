@@ -1,5 +1,5 @@
 var rev = "forward";
-
+// R follow the mouse
 function titlebar(val) {
     var msg = ".::RuM Projects::.";
     var res = " ";
