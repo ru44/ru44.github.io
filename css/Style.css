@@ -1,205 +1,4 @@
-@keyframes fall {
-  0% {
-    opacity: 0.9;
-    top: 0;
-  }
-
-  100% {
-    opacity: 0.2;
-    top: 100%;
-  }
-}
-
-@keyframes blow-soft-left {
-  0% {
-    margin-left: 0;
-  }
-
-  100% {
-    margin-left: -50%;
-  }
-}
-
-@keyframes blow-medium-left {
-  0% {
-    margin-left: 0;
-  }
-
-  100% {
-    margin-left: -100%;
-  }
-}
-
-@keyframes blow-soft-right {
-  0% {
-    margin-left: 0;
-  }
-
-  100% {
-    margin-left: 50%;
-  }
-}
-
-@keyframes blow-medium-right {
-  0% {
-    margin-left: 0;
-  }
-
-  100% {
-    margin-left: 100%;
-  }
-}
-
-@keyframes sway-0 {
-  0% {
-    transform: rotate(-5deg);
-  }
-
-  40% {
-    transform: rotate(28deg);
-  }
-
-  100% {
-    transform: rotate(3deg);
-  }
-}
-
-@keyframes sway-1 {
-  0% {
-    transform: rotate(10deg);
-  }
-
-  40% {
-    transform: rotate(43deg);
-  }
-
-  100% {
-    transform: rotate(15deg);
-  }
-}
-
-@keyframes sway-2 {
-  0% {
-    transform: rotate(15deg);
-  }
-
-  40% {
-    transform: rotate(56deg);
-  }
-
-  100% {
-    transform: rotate(22deg);
-  }
-}
-
-@keyframes sway-3 {
-  0% {
-    transform: rotate(25deg);
-  }
-
-  40% {
-    transform: rotate(74deg);
-  }
-
-  100% {
-    transform: rotate(37deg);
-  }
-}
-
-@keyframes sway-4 {
-  0% {
-    transform: rotate(40deg);
-  }
-
-  40% {
-    transform: rotate(68deg);
-  }
-
-  100% {
-    transform: rotate(25deg);
-  }
-}
-
-@keyframes sway-5 {
-  0% {
-    transform: rotate(50deg);
-  }
-
-  40% {
-    transform: rotate(78deg);
-  }
-
-  100% {
-    transform: rotate(40deg);
-  }
-}
-
-@keyframes sway-6 {
-  0% {
-    transform: rotate(65deg);
-  }
-
-  40% {
-    transform: rotate(92deg);
-  }
-
-  100% {
-    transform: rotate(58deg);
-  }
-}
-
-@keyframes sway-7 {
-  0% {
-    transform: rotate(72deg);
-  }
-
-  40% {
-    transform: rotate(118deg);
-  }
-
-  100% {
-    transform: rotate(68deg);
-  }
-}
-
-@keyframes sway-8 {
-  0% {
-    transform: rotate(94deg);
-  }
-
-  40% {
-    transform: rotate(136deg);
-  }
-
-  100% {
-    transform: rotate(82deg);
-  }
-}
-
-.sakura {
-  background: linear-gradient(120deg, rgba(183, 255, 255, 0.9), rgba(155, 226, 226, 0.9));
-  border-radius: 12px 1px;
-  pointer-events: none;
-  position: absolute;
-}
-
-.glow {
-  color: #fff;
-  text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677, 0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
-  }
-
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #9be2e2, 0 0 40px #9be2e2, 0 0 50px #9be2e2, 0 0 60px #9be2e2, 0 0 70px #9be2e2, 0 0 80px #9be2e2;
-  }
-}
-
-html {
+html,a:hover {
   background: url("https://i.imgur.com/6OfGEce.png") #000 100%;
   background-size: cover;
   background-attachment: fixed;
@@ -207,6 +6,7 @@ html {
   font-size: 24px;
   overflow: hidden;
   text-align: center;
+  cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
 }
 
 img {
@@ -275,14 +75,35 @@ footer {
   text-align: center;
   color: white;
   font-size: 24px;
-  text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e, 0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736, 0 0 75px #2d4140;
+  text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e,
+    0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736,
+    0 0 75px #2d4140;
   animation-name: blinker;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-body,
-a:hover {
-  cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
+.glow {
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
+      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+  }
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
+      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9be2e2, 0 0 40px #9be2e2,
+      0 0 50px #9be2e2, 0 0 60px #9be2e2, 0 0 70px #9be2e2, 0 0 80px #9be2e2;
+  }
 }
