@@ -1,33 +1,36 @@
-var rev = "forward";
-// R follow the mouse
-function titlebar(val) {
-    var msg = ".::RuM Projects::.";
-    var res = " ";
-    var speed = 50
-    var position = val;
-    msg = "" + msg + "";
-    var length = msg.length;
-    if (rev == "forward") {
+let direction = "forward";
+function animateTitleText(position) {
+    const message = ".::RuM Projects::.";
+    const spaces = " ".repeat(position);
+    const scroll = message.substring(position);
+    const titleText = spaces + scroll;
+    document.title = titleText;
+    const length = message.length;
+    const speed = 50;
+    if (direction === "forward") {
         if (position < length) {
-            position = position + 1;
-            scroll = msg.substr(0, position);
-            document.title = scroll;
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
+            position++;
+            window.setTimeout(() => {
+                animateTitleText(position);
+            }, speed);
         } else {
-            rev = "backward";
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
+            direction = "backward";
+            window.setTimeout(() => {
+                animateTitleText(position);
+            }, speed);
         }
     } else {
         if (position > 0) {
-            position = position - 1;
-            var ale = length - position;
-            scroll = msg.substr(ale, length);
-            document.title = scroll;
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
+            position--;
+            window.setTimeout(() => {
+                animateTitleText(position);
+            }, speed);
         } else {
-            rev = "forward";
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
+            direction = "forward";
+            window.setTimeout(() => {
+                animateTitleText(position);
+            }, speed);
         }
     }
 }
-titlebar(0);
+animateTitleText(0);
