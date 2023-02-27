@@ -1,136 +1,112 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  oncontextmenu="return false;"
-  onkeydown="return false;"
-  onmousedown="return false;"
-  ondragstart="return false;"
-  onselectstart="return false;"
->
-  <head>
-    <title>RuM Projects</title>
-    <!--metadata-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="author" content="RuM" />
-    <meta name="keywords" content="RuM, Projects" />
-    <meta name="description" content="RuM Projects" />
-    <meta name="rating" content="general" />
-    <meta name="language" content="en-us" />
-    <meta name="identifier-URL" content="https://github.com/" />
-    <meta name="web_content_type" content="Personal Website" />
-    <meta name="classification" content="Business" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="1" />
-    <meta name="all" content="robots" />
-   <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/Tg2A6rI.png">
-    <!-- CSS stylesheets -->
-    <link rel="stylesheet" href="https://raw.githack.com/ru44/ru44.github.io/master/css/sakura.css">
-    <link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="/css/Style.css" rel="stylesheet">
-    <!--Js-->
-    <script src="https://kit.fontawesome.com/9f036a1af9.js" crossorigin="anonymous"></script>
-    <script src="https://raw.githack.com/ru44/ru44.github.io/master/js/title.js"></script>
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-      type="text/javascript"
-    ></script>
-    <script src="https://raw.githack.com/ru44/ru44.github.io/master/js/animtion.js"></script>
-    <script>
-      $(window).load(function () {
-        $("html").sakura();
-      });
-    </script>
-    <script type="text/javascript">
-      let element = new Image();
-      let devtoolsOpen = false;
-      element.__defineGetter__("id", function () {
-        devtoolsOpen = true;
-      });
-      setInterval(function () {
-        devtoolsOpen = false;
-        console.log(element);
-        console.log(
-          "You are not smart! You opened the console! :D Find the flag in the source code!"
-        );
-        if (devtoolsOpen == true) {
-        }
-      }, 1000);
-    </script>
-    <script>
-      const pressed = {};
-      const audio = document.getElementsByClassName("sound");
-      const maxValue = 2;
-      document.onkeydown = function (e) {
-        if (pressed[e.which]) return;
-        pressed[e.which] = e.timeStamp;
-      };
-      document.onkeyup = function (e) {
-        if (!pressed[e.which]) return;
-        if (e.keyCode === 32) {
-          const duration = (e.timeStamp - pressed[e.which]) / 1000;
-          const volume = duration >= maxValue ? 1 : duration / maxValue;
-          audio.volume = volume;
-          document.querySelector("audio").play();
-          pressed[e.which] = 0;
-          return false;
-        }
-      };
-    </script>
-  </head>
+<html lang="en" oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;"
+  ondragstart="return false;" onselectstart="return false;">
 
-  <body>
-    <audio class="sound">
-      <source
-        src="https://audio.jukehost.co.uk/Qe8NEXE7OTak5bS1dpTSYuIo0OC8JUTQ"
-      />
-    </audio>
-    <br />
-    <br />
-    <img
-      alt="RuM is R u 44?"
-      title="You are looking at Right place"
-      src="https://i.imgur.com/3r4mVpp.png"
-      class="logo"
-    />
+<head>
+  <title>RuM Projects</title>
+  <!--metadata-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="RuM" />
+  <meta name="keywords" content="RuM, Projects" />
+  <meta name="description" content="RuM Projects" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="en-us" />
+  <meta name="identifier-URL" content="https://github.com/" />
+  <meta name="web_content_type" content="Personal Website" />
+  <meta name="classification" content="Business" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="1" />
+  <meta name="all" content="robots" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/Tg2A6rI.png" />
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="https://raw.githack.com/ru44/ru44.github.io/master/css/sakura.css" />
+  <link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://raw.githack.com/ru44/ru44.github.io/master/css/Style.css" rel="stylesheet" />
+  <!--Js-->
+  <script src="https://kit.fontawesome.com/9f036a1af9.js" crossorigin="anonymous"></script>
+  <script src="https://raw.githack.com/ru44/ru44.github.io/master/js/title.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://raw.githack.com/ru44/ru44.github.io/master/js/animtion.js"></script>
+  <script>
+    $(window).load(function () {
+      $("html").sakura();
+    });
+  </script>
+  <script type="text/javascript">
+    let element = new Image();
+    let devtoolsOpen = false;
+    element.__defineGetter__("id", function () {
+      devtoolsOpen = true;
+    });
+    setInterval(function () {
+      devtoolsOpen = false;
+      console.log(element);
+      console.log(
+        "You are not smart! You opened the console! :D Find the flag in the source code!"
+      );
+      if (devtoolsOpen == true) {
+      }
+    }, 1000);
+  </script>
+  <script>
+    const pressed = {};
+    const audio = document.getElementsByClassName("sound");
+    const maxValue = 2;
+    document.onkeydown = function (e) {
+      if (pressed[e.which]) return;
+      pressed[e.which] = e.timeStamp;
+    };
+    document.onkeyup = function (e) {
+      if (!pressed[e.which]) return;
+      if (e.keyCode === 32) {
+        const duration = (e.timeStamp - pressed[e.which]) / 1000;
+        const volume = duration >= maxValue ? 1 : duration / maxValue;
+        audio.volume = volume;
+        document.querySelector("audio").play();
+        pressed[e.which] = 0;
+        return false;
+      }
+    };
+  </script>
+</head>
 
-    <br />
-    <div style="text-shadow: 12px 12px 20px #3b73b1">
-      <span style="color: #24001d">
-        <h1 class="glow">RuM Projects</h1>
+<body>
+  <audio class="sound">
+    <source src="https://audio.jukehost.co.uk/Qe8NEXE7OTak5bS1dpTSYuIo0OC8JUTQ" />
+  </audio>
+  <br />
+  <br />
+  <img alt="RuM is R u 44?" title="You are looking at Right place" src="https://i.imgur.com/3r4mVpp.png" class="logo" />
 
-        <h2>
-          Starting EveryThing From Scratch btw this pages just placeholder unitl
-          I finish my Real RuM Page hihi
-        </h2>
-      </span>
-      <span
-        >.::<strong
-          style="
+  <br />
+  <div style="text-shadow: 12px 12px 20px #3b73b1">
+    <span style="color: #24001d">
+      <h1 class="glow">RuM Projects</h1>
+
+      <h2>
+        Starting EveryThing From Scratch btw this pages just placeholder unitl
+        I finish my Real RuM Page hihi
+      </h2>
+    </span>
+    <span>.::<strong style="
             color: white;
             text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e,
               0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535,
               0 0 55px #353736, 0 0 75px #2d4140;
-          "
-          >Welcome To my website all My Projects You will find it here</strong
-        >::.</span
-      >
-    </div>
-    <footer class="footer">
-      <h4>
-        Greets To:
-        <marquee
-          style="font-size: 20px"
-          scrollamount="10"
-          scorlldelay="40"
-          width="50%"
-          >› -=| dR.N2NO | Mr.J0o | Sa3san | Ch@nk3R | DexTer | λɱϓ | o̷s̷a̷m̷a̷ |
-          ᴸᴵᵛᴵᵁ ᶠᴼᴼᵀᴮᴬᴸᴸ|=- ‹</marquee
-        >
-      </h4>
-    </footer>
-  </body>
+          ">Welcome To my website all My Projects You will find it here</strong>::.</span>
+  </div>
+  <footer class="footer">
+    <h4>
+      Greets To:
+      <marquee style="font-size: 20px" scrollamount="10" scorlldelay="40" width="50%">› -=| dR.N2NO | Mr.J0o | Sa3san |
+        Ch@nk3R | DexTer | λɱϓ | o̷s̷a̷m̷a̷ |
+        ᴸᴵᵛᴵᵁ ᶠᴼᴼᵀᴮᴬᴸᴸ|=- ‹</marquee>
+    </h4>
+  </footer>
+</body>
+
 </html>
