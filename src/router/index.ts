@@ -7,7 +7,6 @@ import PageNotFound from '@/views/PageNotFoundView.vue'
 
 // import views
 import HomeView from '@/views/HomeView.vue'
-import LoginView from '@/views/Auth/LoginView.vue'
 import ProfileView from '@/views/User/ProfileView.vue'
 import ContactView from '@/views/ContactView.vue'
 import AboutView from '@/views/AboutView.vue'
@@ -51,14 +50,6 @@ const router = createRouter({
           }
         }
       ]
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginView,
-      meta: {
-        title: 'Login Page'
-      }
     },
     {
       path: '/:pathMatch(.*)*',

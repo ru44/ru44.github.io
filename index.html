@@ -21,7 +21,6 @@
     <meta content="en-us" name="language" />
     <meta content="identifier-URL" name="GitHub" />
     <meta content="Personal Wepsite" name="web_content_type" />
-    <meta content="identifier-URL" name="GitHub" />
     <meta content="classification" name="RuM" />
     <meta content="google rank" name="1" />
     <meta content="robots" name="all" />
@@ -37,14 +36,15 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
       type="text/javascript"
     ></script>
+    <script src="./src/assets/js/title.js" type="text/javascript"></script>
     <script>
       $(window).load(function () {
         $('html').sakura()
       })
     </script>
     <script type="text/javascript">
-      var element = new Image()
-      var devtoolsOpen = false
+      let element = new Image()
+      let devtoolsOpen = false
       element.__defineGetter__('id', function () {
         devtoolsOpen = true
       })
@@ -55,6 +55,7 @@
           'You are not smart! You opened the console! :D Find the flag in the source code!'
         )
         if (devtoolsOpen == true) {
+          // TODO document why this block is empty
         }
       }, 1000)
     </script>
