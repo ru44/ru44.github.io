@@ -1,33 +1,30 @@
-var rev = "forward";
+let direction = 'forward'
 // R follow the mouse
-function titlebar(val) {
-    var msg = ".::RuM Projects::.";
-    var res = " ";
-    var speed = 50
-    var position = val;
-    msg = "" + msg + "";
-    var length = msg.length;
-    if (rev == "forward") {
-        if (position < length) {
-            position = position + 1;
-            scroll = msg.substr(0, position);
-            document.title = scroll;
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
-        } else {
-            rev = "backward";
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
-        }
+function animateTitleBar(index) {
+  let titleMessage = '.::RuM Projects::.'
+  let animationSpeed = 50
+  let position = index
+  titleMessage = '' + titleMessage + ''
+  let messageLength = titleMessage.length
+  let partialMessage = ''
+
+  if (direction == 'forward') {
+    if (position < messageLength) {
+      position = position + 1
+      partialMessage = titleMessage.substr(0, position)
     } else {
-        if (position > 0) {
-            position = position - 1;
-            var ale = length - position;
-            scroll = msg.substr(ale, length);
-            document.title = scroll;
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
-        } else {
-            rev = "forward";
-            timer = window.setTimeout("titlebar(" + position + ")", speed);
-        }
+      direction = 'backward'
     }
+  } else if (position > 0) {
+    position = position - 1
+    let reverseIndex = messageLength - position
+    partialMessage = titleMessage.substr(reverseIndex, messageLength)
+  } else {
+    direction = 'forward'
+  }
+
+  document.title = partialMessage
+  window.setTimeout('animateTitleBar(' + position + ')', animationSpeed)
 }
-titlebar(0);
+
+animateTitleBar(0)
