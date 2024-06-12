@@ -1,5 +1,0 @@
-<template>
-  <AppbarComp />
-
-  <RouterView />
-</template>
