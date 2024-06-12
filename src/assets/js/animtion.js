@@ -1,6 +1,8 @@
 ;(function (jQuery) {
   function setAnimationFrames() {
     let vendorPrefixes = ['ms', 'moz', 'webkit', 'o']
+    let lastTime = 0
+
     for (let index = 0; index < vendorPrefixes.length && !window.requestAnimationFrame; ++index) {
       window.requestAnimationFrame = window[vendorPrefixes[index] + 'RequestAnimationFrame']
       window.cancelAnimationFrame =
@@ -11,11 +13,13 @@
     if (!window.requestAnimationFrame) {
       window.requestAnimationFrame = function (callback) {
         let currentTime = new Date().getTime()
+        let timeToCall = Math.max(0, 16 - (currentTime - lastTime))
+        lastTime = currentTime + timeToCall
+
         let id = window.setTimeout(function () {
           callback(currentTime + timeToCall)
         }, timeToCall)
-        let lastTime = currentTime + timeToCall
-        let timeToCall = Math.max(0, 16 - (currentTime - lastTime))
+
         return id
       }
     }
