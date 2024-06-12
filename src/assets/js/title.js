@@ -11,14 +11,14 @@ function animateTitleBar(index) {
   if (direction == 'forward') {
     if (position < messageLength) {
       position = position + 1
-      partialMessage = titleMessage.substr(0, position)
+      partialMessage = titleMessage.substring(0, position)
     } else {
       direction = 'backward'
     }
   } else if (position > 0) {
     position = position - 1
     let reverseIndex = messageLength - position
-    partialMessage = titleMessage.substr(reverseIndex, messageLength)
+    partialMessage = titleMessage.substring(reverseIndex, messageLength)
   } else {
     direction = 'forward'
   }
