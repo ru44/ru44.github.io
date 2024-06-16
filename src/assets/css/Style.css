@@ -1,12 +1,13 @@
-html,a:hover {
-  background: url("https://i.imgur.com/6OfGEce.png") #000 100%;
+html,
+a:hover {
+  background: url('../images/background.png') #000 100%;
   background-size: cover;
   background-attachment: fixed;
-  font-family: Iceland;
+  font-family: Iceland, sans-serif;
   font-size: 24px;
   overflow: hidden;
   text-align: center;
-  cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1136.gif), progress !important;
+  cursor: url(../images/cursor.gif), progress !important;
 }
 
 img {
@@ -75,8 +76,14 @@ footer {
   text-align: center;
   color: white;
   font-size: 24px;
-  text-shadow: 0 0 5px #2c7dcd, 0 0 10px #298a9b, 0 0 15px #585e5e,
-    0 0 20px #4a4d4d, 0 0 30px #313232, 0 0 40px #333535, 0 0 55px #353736,
+  text-shadow:
+    0 0 5px #2c7dcd,
+    0 0 10px #298a9b,
+    0 0 15px #585e5e,
+    0 0 20px #4a4d4d,
+    0 0 30px #313232,
+    0 0 40px #333535,
+    0 0 55px #353736,
     0 0 75px #2d4140;
   animation-name: blinker;
   animation-duration: 1s;
@@ -92,18 +99,36 @@ footer {
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
-      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #2d7677,
+      0 0 40px #2d7677,
+      0 0 50px #2d7677,
+      0 0 60px #2d7677,
+      0 0 70px #2d7677;
   }
 }
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2d7677,
-      0 0 40px #2d7677, 0 0 50px #2d7677, 0 0 60px #2d7677, 0 0 70px #2d7677;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #2d7677,
+      0 0 40px #2d7677,
+      0 0 50px #2d7677,
+      0 0 60px #2d7677,
+      0 0 70px #2d7677;
   }
 
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #9be2e2, 0 0 40px #9be2e2,
-      0 0 50px #9be2e2, 0 0 60px #9be2e2, 0 0 70px #9be2e2, 0 0 80px #9be2e2;
+    text-shadow:
+      0 0 20px #fff,
+      0 0 30px #9be2e2,
+      0 0 40px #9be2e2,
+      0 0 50px #9be2e2,
+      0 0 60px #9be2e2,
+      0 0 70px #9be2e2,
+      0 0 80px #9be2e2;
   }
 }

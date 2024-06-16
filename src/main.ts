@@ -1,5 +1,6 @@
 import './assets/css/main.css'
-
+import './assets/css/Style.css'
+import './assets/css/sakura.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

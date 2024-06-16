@@ -13,10 +13,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tresjs/cientos": "^3.9.0",
     "@tresjs/core": "^4.0.2",
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/vue3": "^3.0.1",
     "@vueuse/core": "^10.10.1",
+    "@vueuse/sound": "^2.0.1",
     "dotenv": "^16.4.5",
     "lucide-vue-next": "^0.344.0",
     "pinia": "^2.1.7",

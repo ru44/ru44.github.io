@@ -1,52 +1,55 @@
 <script setup lang="ts">
-     var pressed = {},
-        audio = document.getElementById('sound'),
-        maxValue = 2,
-        duration,
-        volume
+type KeyMap = { [key: number]: number }
+let pressed = ref<KeyMap>({}),
+  audio = ref<any>(null),
+  maxValue = 2,
+  duration: number,
+  volume: number
 
-      document.onkeydown = function (e) {
-        if (pressed[e.which]) return
-        pressed[e.which] = e.timeStamp
+onMounted(() => {
+  audio.value = document.getElementById('sound') as HTMLAudioElement
+
+  document.onkeydown = function (e) {
+    if (pressed.value[e.keyCode]) return
+    pressed.value[e.keyCode] = e.timeStamp
+  }
+
+  document.onkeyup = function (e) {
+    if (!pressed.value[e.keyCode]) return
+
+    if (e.keyCode === 32) {
+      // Calculate press time
+      duration = (e.timeStamp - pressed.value[e.keyCode]) / 1000
+
+      // Calculate new volume
+      if (duration >= maxValue) {
+        volume = 1
+      } else {
+        volume = duration / maxValue
       }
 
-      document.onkeyup = function (e) {
-        if (!pressed[e.which]) return
+      // Set the volume and play the track
+      audio.value.volume = volume
+      audio.value.play()
 
-        if (e.keyCode === 32) {
-          // Calculate press time
-          duration = (e.timeStamp - pressed[e.which]) / 1000
+      pressed.value[e.keyCode] = 0
 
-          // Calculate new volume
-          if (duration >= maxValue) {
-            volume = 1
-          } else {
-            volume = duration / maxValue
-          }
-
-          // Set the volume and play the track
-          audio.volume = volume
-          audio.play()
-
-          pressed[e.which] = 0
-
-          return false
-        }
-      }
-
+      return false
+    }
+  }
+})
 </script>
-
 <template>
   <main>
     <audio id="sound">
-      <source src="https://audio.jukehost.co.uk/Qe8NEXE7OTak5bS1dpTSYuIo0OC8JUTQ" />
+      <source src="https://audio.jukehost.co.uk/jmjS05pRiFBUywDRVVL0NysvEzHg2SQT" />
     </audio>
     <br />
     <br />
     <img
       alt="RuM is R u 44?"
       title="You are looking at Right place"
-      src="https://i.imgur.com/3r4mVpp.png"
+      src="../assets/images/logo.png"
     />
 
     <br />
@@ -80,10 +83,36 @@
     <footer>
       <h4>
         Greets To:
-        <marquee style="font-size: 20px" scrollamount="10" scorlldelay="40" width="50%">
-          › -=| dR.N2NO | Mr.J0o | Sa3san | Ch@nk3R | DexTer | λɱϓ | o̷s̷a̷m̷a̷ | ᴸᴵᵛᴵᵁ ᶠᴼᴼᵀᴮᴬᴸᴸ|=- ‹
-        </marquee>
+        <div class="marquee">
+          <p class="text">
+            › -=| dR.N2NO | Mr.J0o | Sa3san | Ch@nk3R | DexTer | λɱϓ | o̷s̷a̷m̷a̷ | ᴸᴵᵛᴵᵁ ᶠᴼᴼᵀᴮᴬᴸᴸ|=- ‹
+          </p>
+        </div>
       </h4>
     </footer>
   </main>
 </template>
+
+<style scoped>
+.marquee {
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>

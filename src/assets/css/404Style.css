@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Russo+One");
+@import url('https://fonts.googleapis.com/css?family=Lato|Russo+One');
 
 *,
 *:after,
@@ -21,13 +21,19 @@ body {
 }
 
 .container-star {
-  background-image: linear-gradient(to bottom, rgba(8, 53, 75, 0.73), rgba(3, 3, 3, 0.692)), url("https://i.imgur.com/6OfGEce.png");
+  background-image: linear-gradient(to bottom, rgba(8, 53, 75, 0.73), rgba(3, 3, 3, 0.692)),
+    url('https://i.imgur.com/6OfGEce.png');
   background-size: cover;
 }
 
 .container-star:after {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, rgba(15, 10, 38, 0.2) 100%);
-  content: "";
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(15, 10, 38, 0.2) 100%
+  );
+  content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -46,17 +52,22 @@ body {
   height: 100%;
   width: 100%;
   transform: rotate(90deg);
-  content: "";
+  content: '';
   position: absolute;
   background-color: #fff;
   border-radius: 50%;
 }
 
 .star-1:before {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: absolute;
   border-radius: 50%;
-  content: "";
+  content: '';
   top: -20%;
   left: -50%;
 }
@@ -994,13 +1005,13 @@ body {
 .number {
   text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
   padding: 0 0.2em;
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
 }
 
 .subtitle {
   font-size: 25px;
   margin-top: 1.5em;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -1009,13 +1020,12 @@ button {
   margin-top: 1.5em;
   padding: 0.5em 1em;
   letter-spacing: 1px;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: white;
   background-color: transparent;
-  border: 0;
+  border: 2px solid white;
   cursor: pointer;
   z-index: 999;
-  border: 2px solid white;
   border-radius: 5px;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   transition: opacity 0.2s ease;
@@ -1036,7 +1046,14 @@ button:focus {
   height: 160px;
   z-index: 2;
   background-color: #fff;
-  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #5297cf;
+  box-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #fff,
+    0 0 70px #fff,
+    0 0 80px #fff,
+    0 0 100px #5297cf;
   animation: rotate 5s ease-in-out infinite;
 }
 
@@ -1080,7 +1097,7 @@ button:focus {
 .moon .face .eyes .eye-left:after,
 .moon .face .eyes .eye-right:before,
 .moon .face .eyes .eye-right:after {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 50%;
   width: 4px;
