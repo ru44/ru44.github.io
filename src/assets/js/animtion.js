@@ -120,10 +120,6 @@
 
       sakura
         .css({
-          '-webkit-animation': animation,
-          '-o-animation': animation,
-          '-ms-animation': animation,
-          '-moz-animation': animation,
           animation: animation,
           height: size,
           left: leftPosition,

@@ -62,17 +62,4 @@ const router = createRouter({
   ]
 })
 
-// router.beforeEach(async (to, from, next) => {
-//   const publicPages = ['login'] // Use the name instead of path
-//   const authStore = useAuthStore()
-
-//   const authRequired = !publicPages.includes(to.name as string)
-//   if (authRequired && !authStore.IS_AUTHENTICATED) {
-//     authStore.RETURN_URL = to.path
-//     return next({ name: 'login' }) // Use the name property in next()
-//   } else {
-//     document.title = to.meta.title as string
-//     next()
-//   }
-// })
 export default router

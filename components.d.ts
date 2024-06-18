@@ -10,5 +10,6 @@ declare module 'vue' {
     AppbarComp: typeof import('./src/components/appbarComp.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SakuraComp: typeof import('./src/components/SakuraComp.vue')['default']
   }
 }

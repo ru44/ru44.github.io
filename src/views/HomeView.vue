@@ -47,6 +47,7 @@ onMounted(() => {
     <br />
     <br />
     <img
+      class="mx-auto block animate__animated animate__pulse animate__infinite"
       alt="RuM is R u 44?"
       title="You are looking at Right place"
       src="../assets/images/logo.png"
@@ -58,8 +59,8 @@ onMounted(() => {
         <h1 class="glow">RuM Projects</h1>
 
         <h2>
-          Starting EveryThing From Scratch btw this pages just placeholder unitl I finish my Real
-          RuM Page hihi
+          Starting EveryThing From Scratch btw this page just placeholder unitl I finish my Real RuM
+          Page hihi
         </h2>
       </span>
       <span
