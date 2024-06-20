@@ -1,55 +1,177 @@
+<script setup lang="ts"></script>
 <template>
-  <transition-group name="fall" tag="div">
-    <div
-      v-for="sakura in sakuras"
-      :key="sakura.id"
-      class="sakura"
-      :style="{ left: `${sakura.left}px`, animationDuration: `${sakura.duration}s` }"
-    ></div>
-  </transition-group>
+  <div></div>
 </template>
-
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
-let sakuras = ref([])
-let intervalId
-
-onMounted(() => {
-  intervalId = setInterval(() => {
-    sakuras.value.push({
-      id: Date.now(),
-      left: Math.random() * window.innerWidth,
-      duration: Math.random() * 5 + 5
-    })
-
-    if (sakuras.value.length > 50) {
-      sakuras.value.shift()
-    }
-  }, 300)
-})
-
-onUnmounted(() => {
-  clearInterval(intervalId)
-})
-</script>
 
 <style>
 .sakura {
+  background: linear-gradient(120deg, rgba(183, 255, 255, 0.9), rgba(155, 226, 226, 0.9));
+  border-radius: 12px 1px;
+  pointer-events: none;
   position: absolute;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  background: pink;
-  border-radius: 50%;
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(100vh);
+  0% {
+    opacity: 0.9;
+    top: 0;
+  }
+  100% {
+    opacity: 0.2;
+    top: 100%;
+  }
+}
+
+@keyframes blow-soft-left {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -50%;
+  }
+}
+
+@keyframes blow-medium-left {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+
+@keyframes blow-soft-right {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 50%;
+  }
+}
+
+@keyframes blow-medium-lerightft {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes blow-medium-right {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes sway-0 {
+  0% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(28deg);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes sway-1 {
+  0% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(43deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes sway-2 {
+  0% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(56deg);
+  }
+  100% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes sway-3 {
+  0% {
+    transform: rotate(25deg);
+  }
+  40% {
+    transform: rotate(74deg);
+  }
+  100% {
+    transform: rotate(37deg);
+  }
+}
+
+@keyframes sway-4 {
+  0% {
+    transform: rotate(40deg);
+  }
+  40% {
+    transform: rotate(68deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes sway-5 {
+  0% {
+    transform: rotate(50deg);
+  }
+  40% {
+    transform: rotate(78deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes sway-6 {
+  0% {
+    transform: rotate(65deg);
+  }
+  40% {
+    transform: rotate(92deg);
+  }
+  100% {
+    transform: rotate(58deg);
+  }
+}
+
+@keyframes sway-7 {
+  0% {
+    transform: rotate(72deg);
+  }
+  40% {
+    transform: rotate(118deg);
+  }
+  100% {
+    transform: rotate(68deg);
+  }
+}
+
+@keyframes sway-8 {
+  0% {
+    transform: rotate(94deg);
+  }
+  40% {
+    transform: rotate(136deg);
+  }
+  100% {
+    transform: rotate(82deg);
   }
 }
 </style>

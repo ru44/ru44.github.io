@@ -1,22 +1,14 @@
-;(function (jQuery) {
-  function setAnimationFrames() {
-    let vendorPrefixes = ['ms', 'moz', 'webkit', 'o']
+;(function () {
+  const setAnimationFrames = () => {
     let lastTime = 0
 
-    for (let index = 0; index < vendorPrefixes.length && !window.requestAnimationFrame; ++index) {
-      window.requestAnimationFrame = window[vendorPrefixes[index] + 'RequestAnimationFrame']
-      window.cancelAnimationFrame =
-        window[vendorPrefixes[index] + 'CancelAnimationFrame'] ||
-        window[vendorPrefixes[index] + 'CancelRequestAnimationFrame']
-    }
-
     if (!window.requestAnimationFrame) {
-      window.requestAnimationFrame = function (callback) {
-        let currentTime = new Date().getTime()
-        let timeToCall = Math.max(0, 16 - (currentTime - lastTime))
+      window.requestAnimationFrame = (callback) => {
+        const currentTime = new Date().getTime()
+        const timeToCall = Math.max(0, 16 - (currentTime - lastTime))
         lastTime = currentTime + timeToCall
 
-        let id = window.setTimeout(function () {
+        const id = window.setTimeout(() => {
           callback(currentTime + timeToCall)
         }, timeToCall)
 
@@ -25,16 +17,14 @@
     }
 
     if (!window.cancelAnimationFrame) {
-      window.cancelAnimationFrame = function (id) {
+      window.cancelAnimationFrame = (id) => {
         clearTimeout(id)
       }
     }
   }
 
-  function sakura(options) {
-    let prefixes = ['moz', 'ms', 'o', 'webkit', '']
-    let prefixesLength = prefixes.length
-    let defaultOptions = {
+  const sakura = (options) => {
+    const defaultOptions = {
       blowAnimations: [
         'blow-soft-left',
         'blow-medium-left',
@@ -60,83 +50,64 @@
         'sway-8'
       ]
     }
-    options = jQuery.extend({}, defaultOptions, options)
+    options = Object.assign({}, defaultOptions, options)
 
-    let documentHeight = jQuery(document).height()
-    let documentWidth = jQuery(document).width()
-    let sakuraDiv = jQuery('<div class="' + options.className + '" />')
+    let documentHeight = document.documentElement.scrollHeight
+    let documentWidth = document.documentElement.scrollWidth
+    const sakuraDiv = document.createElement('div')
+    sakuraDiv.className = options.className
 
-    jQuery('body').css({
-      'overflow-x': 'hidden'
-    })
+    document.body.style.overflowX = 'hidden'
 
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min
-    }
+    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
 
-    function addEventListener(element, event, handler) {
-      for (let i = 0; prefixesLength > i; i++) {
-        prefixes[i] || (event = event.toLowerCase())
-        element.get(0).addEventListener(prefixes[i] + event, handler, !1)
-      }
-    }
-
-    function createSakura() {
-      setTimeout(function () {
+    const createSakura = () => {
+      setTimeout(() => {
         requestAnimationFrame(createSakura)
       }, options.newOn)
 
-      let blowAnimation =
+      const blowAnimation =
         options.blowAnimations[Math.floor(Math.random() * options.blowAnimations.length)]
-      let swayAnimation =
+      const swayAnimation =
         options.swayAnimations[Math.floor(Math.random() * options.swayAnimations.length)]
-      let fallSpeed = (Math.round(0.007 * documentHeight) + 5 * Math.random()) * options.fallSpeed
-      let animation =
-        'fall ' +
-        fallSpeed +
-        's linear 0s 1, ' +
-        blowAnimation +
-        ' ' +
-        ((fallSpeed > 30 ? fallSpeed : 30) - 20 + getRandomInt(0, 20)) +
-        's linear 0s infinite, ' +
-        swayAnimation +
-        ' ' +
-        getRandomInt(2, 4) +
-        's linear 0s infinite'
-      let sakura = sakuraDiv.clone()
-      let size = getRandomInt(options.minSize, options.maxSize)
-      let leftPosition = Math.random() * documentWidth - 100
-      let marginTop = -(20 * Math.random() + 15)
+      const fallSpeed = (Math.round(0.007 * documentHeight) + 5 * Math.random()) * options.fallSpeed
+      const animation = `fall ${fallSpeed}s linear 0s 1, ${blowAnimation} ${(fallSpeed > 30 ? fallSpeed : 30) - 20 + getRandomInt(0, 20)}s linear 0s infinite, ${swayAnimation} ${getRandomInt(2, 4)}s linear 0s infinite`
+      const sakura = sakuraDiv.cloneNode()
+      const size = getRandomInt(options.minSize, options.maxSize)
+      const leftPosition = Math.random() * documentWidth - 100
+      const marginTop = -(20 * Math.random() + 15)
 
-      addEventListener(sakura, 'AnimationEnd', function () {
-        jQuery(this).remove()
+      sakura.addEventListener('animationend', function () {
+        this.remove()
       })
 
-      addEventListener(sakura, 'AnimationIteration', function (event) {
-        if (jQuery.inArray(event.animationName, options.blowAnimations) !== -1) {
-          jQuery(this).remove()
+      sakura.addEventListener('animationiteration', function (event) {
+        if (options.blowAnimations.includes(event.animationName)) {
+          this.remove()
         }
       })
 
-      sakura
-        .css({
-          animation: animation,
-          height: size,
-          left: leftPosition,
-          'margin-top': marginTop,
-          width: size
-        })
-        .appendTo('body')
+      sakura.style.animation = animation
+      sakura.style.height = `${size}px`
+      sakura.style.left = `${leftPosition}px`
+      sakura.style.marginTop = `${marginTop}px`
+      sakura.style.width = `${size}px`
+
+      document.body.appendChild(sakura)
     }
 
-    jQuery(window).resize(function () {
-      documentHeight = jQuery(document).height()
-      documentWidth = jQuery(document).width()
+    window.addEventListener('resize', () => {
+      documentHeight = document.documentElement.scrollHeight
+      documentWidth = document.documentElement.scrollWidth
     })
 
     requestAnimationFrame(createSakura)
   }
 
   setAnimationFrames()
-  jQuery.fn.sakura = sakura
-})(jQuery)
+  window.sakura = sakura
+})()
+
+document.addEventListener('DOMContentLoaded', () => {
+  sakura()
+})
