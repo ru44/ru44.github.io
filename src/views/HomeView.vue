@@ -40,7 +40,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <!-- <SakuraComp /> -->
+  <SakuraComp />
   <audio id="sound">
     <source src="https://audio.jukehost.co.uk/jmjS05pRiFBUywDRVVL0NysvEzHg2SQT" />
   </audio>
