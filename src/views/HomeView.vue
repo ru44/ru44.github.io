@@ -44,8 +44,7 @@ onMounted(() => {
   <audio id="sound">
     <source src="https://audio.jukehost.co.uk/jmjS05pRiFBUywDRVVL0NysvEzHg2SQT" />
   </audio>
-  <br />
-  <br />
+  <fireComp />
   <img
     class="mx-auto block animate__animated animate__pulse animate__infinite"
     alt="RuM is R u 44?"
@@ -53,11 +52,9 @@ onMounted(() => {
     src="../assets/images/logo.png"
   />
 
-  <br />
   <div style="text-shadow: 12px 12px 20px #3b73b1">
     <span style="color: #24001d">
       <h1 class="glow">RuM Projects</h1>
-
       <h2>
         Starting EveryThing From Scratch btw this page just placeholder unitl I finish my Real RuM
         Page hihi

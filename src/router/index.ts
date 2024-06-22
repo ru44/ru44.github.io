@@ -7,6 +7,8 @@ import PageNotFound from '@/views/PageNotFoundView.vue'
 
 // import views
 import HomeView from '@/views/HomeView.vue'
+import ForstView from '@/views/Forst/ForstView.vue'
+import PlanetView from '@/views/Planet/PlanetView.vue'
 import ProfileView from '@/views/User/ProfileView.vue'
 import ContactView from '@/views/ContactView.vue'
 import AboutView from '@/views/AboutView.vue'
@@ -23,6 +25,22 @@ const router = createRouter({
           component: HomeView,
           meta: {
             title: 'Home Page'
+          }
+        },
+        {
+          path: '/forst',
+          name: 'forst',
+          component: ForstView,
+          meta: {
+            title: 'Forst Page'
+          }
+        },
+        {
+          path: '/planet',
+          name: 'planet',
+          component: PlanetView,
+          meta: {
+            title: 'Planet Page'
           }
         },
         {

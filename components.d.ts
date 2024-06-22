@@ -7,9 +7,15 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Airplane: typeof import('./src/components/Planet/Airplane.vue')['default']
+    AirplaneComp: typeof import('./src/components/Planet/AirplaneComp.vue')['default']
     AppbarComp: typeof import('./src/components/appbarComp.vue')['default']
+    CloudComp: typeof import('./src/components/Planet/CloudComp.vue')['default']
+    FireComp: typeof import('./src/components/FireComp.vue')['default']
+    PlanetComp: typeof import('./src/components/Planet/PlanetComp.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SakuraComp: typeof import('./src/components/SakuraComp.vue')['default']
+    TheExperience: typeof import('./src/components/Planet/TheExperience.vue')['default']
   }
 }

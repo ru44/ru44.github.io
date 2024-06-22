@@ -1,11 +1,5 @@
-<template>
-  <div></div>
-</template>
-
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
-
-let sakura: any
+let sakura: any = ref(null)
 
 onMounted(() => {
   ;(function () {
@@ -125,6 +119,10 @@ onUnmounted(() => {
   // Cleanup code here if needed
 })
 </script>
+
+<template>
+  <div></div>
+</template>
 
 <style>
 .sakura {
